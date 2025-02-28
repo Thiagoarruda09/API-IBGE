@@ -24,6 +24,7 @@ SELECT_REGIAO.innerHTML += regioes
 }
 
 function atualizarEstados(){
+SELECT_ESTADO.innerHTML = '<option selected disabled>--Selecione--</option>'
     let id = SELECT_REGIAO.value
  fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/regioes/${id}/estados
 `)
@@ -36,6 +37,7 @@ function atualizarEstados(){
 }
 
 function atualizarCidades(){
+    SELECT_CIDADE.innerHTML = '<option selected disabled>--Selecione--</option>'
     let id = SELECT_ESTADO.value
 fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${id}/municipios
 `)
